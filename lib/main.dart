@@ -33,8 +33,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var latitude = 18.520760;
-  var longitude = 73.855408;
+  var latitude = 18.4529;
+  var longitude = 73.8652;
 
   @override
   void initState() {
@@ -48,9 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
-
-    // latitude = position.latitude;
-    // longitude = position.longitude;
 
     http.Response response = await http.get(Uri.parse(
         'https://fcc-weather-api.glitch.me/api/current?lat=$latitude&lon=$longitude'));
